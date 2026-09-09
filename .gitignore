@@ -1,0 +1,27 @@
+# Operating System Artifacts
+.DS_Store
+Thumbs.db
+
+# Editor & IDE Configs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Local Environment & Secrets
+.env
+.env.local
+*.pem
+*.key
+
+# Local Scratchpad & Playground
+# Ignore temporary testing files inside playground, but keep the directory tracked
+playground/*
+!playground/.gitkeep
+
+# Temporary bandit passwords and scratch notes
+bandit_passwords.txt
+scratch.txt
+*.tmp
+*.bak
