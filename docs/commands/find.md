@@ -9,6 +9,7 @@
 * **The Raw Byte Suffix Quirk (`c`):** In `find`, standard unit abbreviations differ from utilities like `ls` or `truncate`. To match exact bytes, use the suffix `c` (characters/bytes), not `b` (which denotes 512-byte blocks). For example, `-size 1033c` matches exactly 1033 bytes, whereas `-size 1033` matches 1033 × 512-byte blocks.
 * **Implicit Path Traversal:** If no starting path is provided in standard POSIX environments, `find` may fail or require an explicit search root. Modern GNU `find` defaults to the current directory (`.`), but specifying the path explicitly prevents portability bugs across minimal shells.
 * **Unbounded `-exec` Overhead:** Using `-exec command {} \;` spawns a distinct process for every matching file, causing heavy CPU overhead on large directory trees. Using `-exec command {} +` aggregates matched files into batched arguments, drastically reducing process creation costs.
+* **Unhandled Stderr Pollution (`Permission denied`):** Running broad root-level scans (e.g., `find / ...`) as an unprivileged user prints hundreds of `Permission denied` errors to standard error (`stderr`), obscuring valid search results on standard output (`stdout`). Mute permission noise by redirecting file descriptor 2 to `/dev/null` (`2>/dev/null`).
 
 ## Essential Flags
 
@@ -22,11 +23,14 @@
 | `-perm` | Permission Bits | Matches file permission modes (e.g., `/4000` for SUID, `-002` for world-writable). |
 | `-exec` | Action Execution | Executes an external command on each match (`{}` is replaced by the file path). |
 | `-delete` | In-Place Removal | Deletes matching files directly within `find` without invoking an external shell process. |
+| `-user` | Owner Match | Filters files owned by a specific username or numeric UID. |
+| `-group` | Group Match | Filters files owned by a specific group name or numeric GID. |
 
 ## Production Use Cases
 
 * **Rotating Stale Application Logs:** Automated cron jobs locate and remove uncompressed application logs older than a retention threshold (e.g., 14 days) to prevent disk exhaustion.
 * **Security Auditing & Compliance:** System administrators scan mounts to detect world-writable files or unexpected SUID binaries that introduce privilege escalation vectors.
+* **Auditing Orphaned and Daemon Ownership:** DevOps engineers scan filesystems to locate files belonging to deprovisioned user IDs (`-nouser`, `-nogroup`) or ensure sensitive application directories are strictly owned by designated service accounts (e.g., `www-data` or `nginx`).
 
 ## Production Examples
 
@@ -39,3 +43,9 @@ find /var/www -type f -perm -002 -exec ls -la {} +
 
 # Locate files larger than 500MB across a data mount to troubleshoot disk pressure
 find /mnt/data -type f -size +500M -exec du -h {} +
+
+# Locate all files owned by a specific service user across root while silencing permission errors
+find / -type f -user www-data -group www-data 2>/dev/null
+
+# Scan for orphaned files left behind by deleted system accounts
+find /var/www -nouser -o -nogroup 2>/dev/null
