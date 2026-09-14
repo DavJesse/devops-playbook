@@ -10,3 +10,4 @@ A structured operational reference for essential Linux commands, system behavior
 | `file` | Data Analysis | Magic-byte file type identification | Validating uploaded binary payloads | [file.md](docs/commands/file.md) |
 | `tail` | Observability | Stream or inspect terminal lines | Live log ingestion & pipeline debugging | [tail.md](docs/commands/tail.md) |
 | `head` | Data Sampling | Inspect file headers and initial bytes | Sampling large CSV/log schemas | [head.md](docs/commands/head.md) |
+| `grep` | Text Processing | Filter streams and files by regex patterns | Live error triage and config auditing | [grep.md](docs/commands/grep.md) |
