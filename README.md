@@ -12,3 +12,4 @@ A structured operational reference for essential Linux commands, system behavior
 | `head` | Data Sampling | Inspect file headers and initial bytes | Sampling large CSV/log schemas | [head.md](docs/commands/head.md) |
 | `grep` | Text Processing | Filter streams and files by regex patterns | Live error triage and config auditing | [grep.md](docs/commands/grep.md) |
 | `sort` | Text Processing | Reorder streams by lexicographical or numeric keys | Ranking top traffic consumers and log metrics | [sort.md](docs/commands/sort.md) |
+| `uniq` | Text Processing | Filter or report repeated adjacent lines | Generating IP frequency tables and isolating anomaly records | [uniq.md](docs/commands/uniq.md) |
