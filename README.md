@@ -15,3 +15,4 @@ A structured operational reference for essential Linux commands, system behavior
 | `uniq` | Text Processing | Filter or report repeated adjacent lines | Generating IP frequency tables and isolating anomaly records | [uniq.md](docs/commands/uniq.md) |
 | `strings` | Data Analysis | Extract printable character sequences from binary files | Auditing compiled artifacts for embedded secrets and inspecting core dumps | [strings.md](docs/commands/strings.md) |
 | `base64` | Data Serialization | Encode and decode binary data to printable ASCII | Managing Kubernetes Secret manifests and formatting Cloud-init userdata | [base64.md](docs/commands/base64.md) |
+| `tr` | Text Processing | Translate, delete, or squeeze characters from stdin | Stripping Windows CRLF line endings and delimiter normalization | [tr.md](docs/commands/tr.md) |
