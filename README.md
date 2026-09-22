@@ -18,3 +18,4 @@ A structured operational reference for essential Linux commands, system behavior
 | `tr` | Text Processing | Translate, delete, or squeeze characters from stdin | Stripping Windows CRLF line endings and delimiter normalization | [tr.md](docs/commands/tr.md) |
 | `mktemp` | System Automation | Create collision-safe temporary files or directories | Staging ephemeral CI/CD build artifacts with automated cleanup traps | [mktemp.md](docs/commands/mktemp.md) |
 | `cp` | File Operations | Copy files and directories across paths | Preserving ownership and timestamps during pre-migration config backups | [cp.md](docs/commands/cp.md) |
+| `mv` | File Operations | Move or rename files and directories | Executing atomic symlink deployment cutovers and log rotations | [mv.md](docs/commands/mv.md) |
