@@ -17,3 +17,4 @@ A structured operational reference for essential Linux commands, system behavior
 | `base64` | Data Serialization | Encode and decode binary data to printable ASCII | Managing Kubernetes Secret manifests and formatting Cloud-init userdata | [base64.md](docs/commands/base64.md) |
 | `tr` | Text Processing | Translate, delete, or squeeze characters from stdin | Stripping Windows CRLF line endings and delimiter normalization | [tr.md](docs/commands/tr.md) |
 | `mktemp` | System Automation | Create collision-safe temporary files or directories | Staging ephemeral CI/CD build artifacts with automated cleanup traps | [mktemp.md](docs/commands/mktemp.md) |
+| `cp` | File Operations | Copy files and directories across paths | Preserving ownership and timestamps during pre-migration config backups | [cp.md](docs/commands/cp.md) |
