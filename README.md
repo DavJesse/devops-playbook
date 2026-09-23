@@ -22,3 +22,4 @@ A structured operational reference for essential Linux commands, system behavior
 | `xxd` | Data Analysis | Hex dump generation and binary reconstruction | Validating binary magic bytes and generating inline binary test patches | [xxd.md](docs/commands/xxd.md) |
 | `tar` | Archive & Compression | Archive and extract filesystem trees | Packaging immutable release artifacts and streaming directories across SSH | [tar.md](docs/commands/tar.md) |
 | `gzip` | Archive & Compression | Compress or expand single files using DEFLATE | Compressing rotated service logs and streaming piped database dumps | [gzip.md](docs/commands/gzip.md) |
+| `bzip2` | Archive & Compression | High-ratio block-sorting file compressor | Long-term cold database archiving and archive integrity validation | [bzip2.md](docs/commands/bzip2.md) |
