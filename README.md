@@ -20,3 +20,4 @@ A structured operational reference for essential Linux commands, system behavior
 | `cp` | File Operations | Copy files and directories across paths | Preserving ownership and timestamps during pre-migration config backups | [cp.md](docs/commands/cp.md) |
 | `mv` | File Operations | Move or rename files and directories | Executing atomic symlink deployment cutovers and log rotations | [mv.md](docs/commands/mv.md) |
 | `xxd` | Data Analysis | Hex dump generation and binary reconstruction | Validating binary magic bytes and generating inline binary test patches | [xxd.md](docs/commands/xxd.md) |
+| `tar` | Archive & Compression | Archive and extract filesystem trees | Packaging immutable release artifacts and streaming directories across SSH | [tar.md](docs/commands/tar.md) |
